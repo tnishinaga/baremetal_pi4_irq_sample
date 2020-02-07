@@ -1,0 +1,17 @@
+#include "raspi_peripheral.h"
+
+#ifdef TARGET_RASPI_4
+
+// gpio
+GPIO_Type *GPIO = (GPIO_Type *)GPIO_BASE;
+// uart
+PL011_UART_Type *UART0 = (PL011_UART_Type *)UART0_BASE;
+// GICv2
+GIC_V2_Type GIC_V2 = {
+    .D = (GIC_V2_DISTRIBUTOR_Type *)GIC_V2_DISTRIBUTOR_BASE,
+    .C = (GIC_V2_CPU_INTERFACE_Type *)GIC_V2_CPU_INTERFACE_BASE,
+    .H = (GIC_V2_HYPERVISOR_Type *)GIC_V2_HYPERVISOR_BASE,
+    .V = (GIC_V2_VIRTUAL_CPU_Type *)GIC_V2_VIRTUAL_CPU_BASE
+};
+
+#endif

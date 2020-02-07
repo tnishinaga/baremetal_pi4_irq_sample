@@ -1,0 +1,24 @@
+[pi3]
+# JTAG setup function
+# GPIO4  : ALT5 : TDI
+# GPIO22 : ALT4 : TRST
+# GPIO23 : ALT4 : RTCK
+# GPIO24 : ALT4 : TDO
+# GPIO25 : ALT4 : TCK
+# GPIO27 : ALT4 : TMS
+gpio=22-25=a4
+gpio=27=a4
+gpio=4=a5
+
+[pi4]
+enable_jtag_gpio=1
+enable_gic=1
+
+[all]
+# boot AARCH64 mode
+arm_64bit=1
+# kernel file
+kernel=kernel.bin
+
+# set uart clock to 48MHz
+init_uart_clock=48000000
